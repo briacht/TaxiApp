@@ -1,0 +1,61 @@
+﻿{
+  "TrainingConfigurationVersion": 0,
+  "TrainingTime": 120,
+  "Scenario": {
+    "ScenarioType": "Classification"
+  },
+  "DataSource": {
+    "DataSourceType": "TabularFile",
+    "FileName": "C:\\Datasets\\yelp_labelled.txt",
+    "Delimiter": "\t",
+    "DecimalMarker": ".",
+    "HasHeader": true,
+    "ColumnProperties": [
+      {
+        "ColumnName": "Comment",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false
+      },
+      {
+        "ColumnName": "Sentiment",
+        "ColumnPurpose": "Label",
+        "ColumnDataFormat": "String",
+        "IsCategorical": true
+      }
+    ]
+  },
+  "Environment": {
+    "EnvironmentType": "LocalCPU"
+  },
+  "Artifact": {
+    "Type": "LocalArtifact",
+    "MLNetModelPath": "ReviewSentimentModel.zip"
+  },
+  "RunHistory": {
+    "Trials": [
+      {
+        "TrainerName": "AveragedPerceptronOva",
+        "Score": 0.8029,
+        "RuntimeInSeconds": 16.6
+      },
+      {
+        "TrainerName": "SdcaMaximumEntropyMulti",
+        "Score": 0.8014,
+        "RuntimeInSeconds": 22.3
+      },
+      {
+        "TrainerName": "LightGbmMulti",
+        "Score": 0.7923,
+        "RuntimeInSeconds": 48.8
+      },
+      {
+        "TrainerName": "SymbolicSgdLogisticRegressionOva",
+        "Score": 0.7512,
+        "RuntimeInSeconds": 12.4
+      }
+    ],
+    "Pipeline": "[{\"EstimatorType\":\"MapValueToKey\",\"Inputs\":[\"Sentiment\"],\"Outputs\":[\"Sentiment\"]},{\"EstimatorType\":\"FeaturizeText\",\"Inputs\":[\"Comment\"],\"Outputs\":[\"Comment_tf\"]},{\"EstimatorType\":\"CopyColumns\",\"Inputs\":[\"Comment_tf\"],\"Outputs\":[\"Features\"]},{\"EstimatorType\":\"NormalizeMinMax\",\"Inputs\":[\"Features\"],\"Outputs\":[\"Features\"]},{\"LabelColumnName\":\"Sentiment\",\"EstimatorType\":\"AveragedPerceptronOva\",\"Inputs\":null,\"Outputs\":null},{\"EstimatorType\":\"MapKeyToValue\",\"Inputs\":[\"PredictedLabel\"],\"Outputs\":[\"PredictedLabel\"]}]",
+    "MetricName": "MicroAccuracy"
+  }
+}
