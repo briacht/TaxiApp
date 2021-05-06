@@ -1,6 +1,6 @@
 ﻿{
   "TrainingConfigurationVersion": 0,
-  "TrainingTime": 120,
+  "TrainingTime": 10,
   "Scenario": {
     "ScenarioType": "Classification"
   },

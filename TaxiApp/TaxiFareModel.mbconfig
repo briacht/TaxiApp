@@ -1,0 +1,76 @@
+﻿{
+  "TrainingConfigurationVersion": 0,
+  "TrainingTime": 120,
+  "Scenario": {
+    "ScenarioType": "Regression"
+  },
+  "DataSource": {
+    "DataSourceType": "TabularFile",
+    "FileName": "C:\\Datasets\\taxi-fare-train.csv",
+    "Delimiter": ",",
+    "DecimalMarker": ".",
+    "HasHeader": true,
+    "ColumnProperties": [
+      {
+        "ColumnName": "vendor_id",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": true
+      },
+      {
+        "ColumnName": "rate_code",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true
+      },
+      {
+        "ColumnName": "passenger_count",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true
+      },
+      {
+        "ColumnName": "trip_time_in_secs",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false
+      },
+      {
+        "ColumnName": "trip_distance",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false
+      },
+      {
+        "ColumnName": "payment_type",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": true
+      },
+      {
+        "ColumnName": "fare_amount",
+        "ColumnPurpose": "Label",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false
+      }
+    ]
+  },
+  "Environment": {
+    "EnvironmentType": "LocalCPU"
+  },
+  "Artifact": {
+    "Type": "LocalArtifact",
+    "MLNetModelPath": "TaxiFareModel.zip"
+  },
+  "RunHistory": {
+    "Trials": [
+      {
+        "TrainerName": "FastForestRegression",
+        "Score": 0.81328329437474534,
+        "RuntimeInSeconds": 36.680000305175781
+      }
+    ],
+    "Pipeline": "[{\"EstimatorType\":\"OneHotEncoding\",\"Inputs\":[\"vendor_id\",\"payment_type\"],\"Outputs\":[\"vendor_id\",\"payment_type\"]},{\"EstimatorType\":\"ReplaceMissingValues\",\"Inputs\":[\"rate_code\",\"passenger_count\",\"trip_time_in_secs\",\"trip_distance\"],\"Outputs\":[\"rate_code\",\"passenger_count\",\"trip_time_in_secs\",\"trip_distance\"]},{\"EstimatorType\":\"Concatenate\",\"Inputs\":[\"vendor_id\",\"payment_type\",\"rate_code\",\"passenger_count\",\"trip_time_in_secs\",\"trip_distance\"],\"Outputs\":[\"Features\"]},{\"EstimatorType\":\"NormalizeMinMax\",\"Inputs\":[\"Features\"],\"Outputs\":[\"Features\"]},{\"LabelColumnName\":\"fare_amount\",\"FeatureColumnName\":\"Features\",\"NumberOfLeaves\":\"6\",\"MinimumExampleCountPerLeaf\":\"3\",\"NumberOfTrees\":\"36\",\"EstimatorType\":\"FastForestRegression\",\"Inputs\":[\"fare_amount\"],\"Outputs\":[\"Features\"]}]",
+    "MetricName": "RSquared"
+  }
+}

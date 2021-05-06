@@ -19,4 +19,16 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+  <ItemGroup Label="TaxiFareModel">
+    <None Include="TaxiFareModel.consumption.cs">
+      <DependentUpon>TaxiFareModel.mbconfig</DependentUpon>
+    </None>
+    <None Include="TaxiFareModel.training.cs">
+      <DependentUpon>TaxiFareModel.mbconfig</DependentUpon>
+    </None>
+    <None Include="TaxiFareModel.zip">
+      <DependentUpon>TaxiFareModel.mbconfig</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>
