@@ -1,0 +1,256 @@
+﻿{
+  "TrainingConfigurationVersion": 0,
+  "TrainingTime": 60,
+  "Scenario": {
+    "ScenarioType": "Regression"
+  },
+  "DataSource": {
+    "DataSourceType": "TabularFile",
+    "FileName": "C:\\Datasets\\taxi-fare-train.csv",
+    "Delimiter": ",",
+    "DecimalMarker": ".",
+    "HasHeader": true,
+    "ColumnProperties": [
+      {
+        "ColumnName": "vendor_id",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": true
+      },
+      {
+        "ColumnName": "rate_code",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true
+      },
+      {
+        "ColumnName": "passenger_count",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true
+      },
+      {
+        "ColumnName": "trip_time_in_secs",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false
+      },
+      {
+        "ColumnName": "trip_distance",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false
+      },
+      {
+        "ColumnName": "payment_type",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": true
+      },
+      {
+        "ColumnName": "fare_amount",
+        "ColumnPurpose": "Label",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false
+      }
+    ]
+  },
+  "Environment": {
+    "EnvironmentType": "LocalCPU"
+  },
+  "Artifact": {
+    "Type": "LocalArtifact",
+    "MLNetModelPath": "TaxiFareModel.zip"
+  },
+  "RunHistory": {
+    "Trials": [
+      {
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.92041323371143413,
+        "RuntimeInSeconds": 1.2280000448226929
+      },
+      {
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.91894157951447186,
+        "RuntimeInSeconds": 2.0099999904632568
+      },
+      {
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.916725809253452,
+        "RuntimeInSeconds": 1.2400000095367432
+      },
+      {
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.91670142361219908,
+        "RuntimeInSeconds": 1.1670000553131104
+      },
+      {
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.91610365180933884,
+        "RuntimeInSeconds": 4.5539999008178711
+      },
+      {
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.91137705265038749,
+        "RuntimeInSeconds": 1.6929999589920044
+      },
+      {
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.91040968927278643,
+        "RuntimeInSeconds": 3.7139999866485596
+      },
+      {
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.9081316094034273,
+        "RuntimeInSeconds": 1.2000000476837158
+      },
+      {
+        "TrainerName": "FastTreeTweedieRegression",
+        "Score": 0.90771034052396771,
+        "RuntimeInSeconds": 2.2780001163482666
+      },
+      {
+        "TrainerName": "FastTreeTweedieRegression",
+        "Score": 0.906970261752579,
+        "RuntimeInSeconds": 1.2660000324249268
+      },
+      {
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.9030570528404418,
+        "RuntimeInSeconds": 1.2079999446868897
+      },
+      {
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.89960144313967771,
+        "RuntimeInSeconds": 0.93599998950958252
+      },
+      {
+        "TrainerName": "FastForestRegression",
+        "Score": 0.83176706435817016,
+        "RuntimeInSeconds": 3.8310000896453857
+      },
+      {
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.81526844293475609,
+        "RuntimeInSeconds": 3.7999999523162842
+      },
+      {
+        "TrainerName": "FastTreeTweedieRegression",
+        "Score": 0.810339489984027,
+        "RuntimeInSeconds": 1.0809999704360962
+      },
+      {
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.79354480311442366,
+        "RuntimeInSeconds": 1.0149999856948853
+      },
+      {
+        "TrainerName": "FastForestRegression",
+        "Score": 0.76709125651807919,
+        "RuntimeInSeconds": 1.3170000314712524
+      },
+      {
+        "TrainerName": "FastForestRegression",
+        "Score": 0.7655757322322404,
+        "RuntimeInSeconds": 1.2450000047683716
+      },
+      {
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.57692744790438133,
+        "RuntimeInSeconds": 2.0980000495910645
+      },
+      {
+        "TrainerName": "FastForestRegression",
+        "Score": 0.57381204507929207,
+        "RuntimeInSeconds": 1.1959999799728394
+      },
+      {
+        "TrainerName": "FastForestRegression",
+        "Score": 0.56678870005087956,
+        "RuntimeInSeconds": 1.1080000400543213
+      },
+      {
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.5422605280788737,
+        "RuntimeInSeconds": 0.89300000667572021
+      },
+      {
+        "TrainerName": "LbfgsPoissonRegressionRegression",
+        "Score": 0.52292202047073633,
+        "RuntimeInSeconds": 1.6690000295639038
+      },
+      {
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.41973297196853887,
+        "RuntimeInSeconds": 0.80900001525878906
+      },
+      {
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.40536691453351503,
+        "RuntimeInSeconds": 1.4340000152587891
+      },
+      {
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.39260241295022125,
+        "RuntimeInSeconds": 0.85399997234344482
+      },
+      {
+        "TrainerName": "FastTreeTweedieRegression",
+        "Score": 0.27844801889539439,
+        "RuntimeInSeconds": 1.7489999532699585
+      },
+      {
+        "TrainerName": "FastTreeRegression",
+        "Score": 0.18756982482896933,
+        "RuntimeInSeconds": 1.1809999942779541
+      },
+      {
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.030049925709528025,
+        "RuntimeInSeconds": 0.7720000147819519
+      },
+      {
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.018275938190497,
+        "RuntimeInSeconds": 1.4010000228881836
+      },
+      {
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.011107853255698186,
+        "RuntimeInSeconds": 0.88899999856948853
+      },
+      {
+        "TrainerName": "SdcaRegression",
+        "Score": -0.23168198921902294,
+        "RuntimeInSeconds": 0.9100000262260437
+      },
+      {
+        "TrainerName": "FastTreeRegression",
+        "Score": -0.272368381488715,
+        "RuntimeInSeconds": 1.059999942779541
+      },
+      {
+        "TrainerName": "FastTreeTweedieRegression",
+        "Score": -0.82580372267592117,
+        "RuntimeInSeconds": 2.0380001068115234
+      },
+      {
+        "TrainerName": "FastTreeTweedieRegression",
+        "Score": -1.1493177777803969,
+        "RuntimeInSeconds": 1.4019999504089356
+      },
+      {
+        "TrainerName": "FastTreeTweedieRegression",
+        "Score": -1.1524993376328663,
+        "RuntimeInSeconds": 0.77300000190734863
+      },
+      {
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.0065632596410374333,
+        "RuntimeInSeconds": 1.0410000085830689
+      }
+    ],
+    "Pipeline": "[{\"EstimatorType\":\"OneHotEncoding\",\"Inputs\":[\"vendor_id\",\"payment_type\"],\"Outputs\":[\"vendor_id\",\"payment_type\"]},{\"EstimatorType\":\"ReplaceMissingValues\",\"Inputs\":[\"rate_code\",\"passenger_count\",\"trip_time_in_secs\",\"trip_distance\"],\"Outputs\":[\"rate_code\",\"passenger_count\",\"trip_time_in_secs\",\"trip_distance\"]},{\"EstimatorType\":\"Concatenate\",\"Inputs\":[\"vendor_id\",\"payment_type\",\"rate_code\",\"passenger_count\",\"trip_time_in_secs\",\"trip_distance\"],\"Outputs\":[\"Features\"]},{\"EstimatorType\":\"NormalizeMinMax\",\"Inputs\":[\"Features\"],\"Outputs\":[\"Features\"]},{\"LabelColumnName\":\"fare_amount\",\"FeatureColumnName\":\"Features\",\"NumberOfLeaves\":\"138\",\"MinimumExampleCountPerLeaf\":\"33\",\"LearningRate\":\"0.00114967946300812\",\"NumberOfIterations\":\"4\",\"EstimatorType\":\"LightGbmRegression\",\"Inputs\":[\"fare_amount\"],\"Outputs\":[\"Features\"]}]",
+    "MetricName": "RSquared"
+  }
+}

@@ -6,6 +6,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.ML" Version="1.5.5" />
     <PackageReference Include="Microsoft.ML.FastTree" Version="1.5.5" />
+    <PackageReference Include="Microsoft.ML.LightGbm" Version="1.5.5" />
   </ItemGroup>
   <ItemGroup Label="ReviewSentimentModel">
     <None Include="ReviewSentimentModel.consumption.cs">
